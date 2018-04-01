@@ -112,6 +112,20 @@ class ViewController: UIViewController {
     
     private func displayImageFromFlickrBySearch(_ methodParameters: [String: AnyObject]) {
         
+        // create URLSession and URLRequest
+        let session = URLSession.shared
+        let request = URLRequest(url: flickrURLFromParameters(methodParameters))
+        
+        // create network request
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if error == nil {
+                print(data!)
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+        
+        task.resume()
         print(flickrURLFromParameters(methodParameters))
         
         // TODO: Make request to Flickr!
