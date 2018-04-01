@@ -78,12 +78,33 @@ class ViewController: UIViewController {
         if isTextFieldValid(latitudeTextField, forRange: Constants.Flickr.SearchLatRange) && isTextFieldValid(longitudeTextField, forRange: Constants.Flickr.SearchLonRange) {
             photoTitleLabel.text = "Searching..."
             // TODO: Set necessary parameters!
-            let methodParameters: [String: AnyObject] = [:]
-            displayImageFromFlickrBySearch(methodParameters)
+            let methodParameters = [
+                Constants.FlickrParameterKeys.SafeSearch: Constants.FlickrParameterValues.UseSafeSearch,
+                Constants.FlickrParameterKeys.Method: Constants.FlickrParameterValues.SearchMethod,
+                Constants.FlickrParameterKeys.BoundingBox: bbox(),
+                Constants.FlickrParameterKeys.Extras: Constants.FlickrParameterValues.MediumURL,
+                Constants.FlickrParameterKeys.Format: Constants.FlickrParameterValues.ResponseFormat,
+                Constants.FlickrParameterKeys.NoJSONCallback: Constants.FlickrParameterValues.DisableJSONCallback,
+                Constants.FlickrParameterKeys.APIKey: Credentials.apiKey
+            ]
+            displayImageFromFlickrBySearch(methodParameters as [String: AnyObject])
         }
         else {
             setUIEnabled(true)
             photoTitleLabel.text = "Lat should be [-90, 90].\nLon should be [-180, 180]."
+        }
+    }
+    
+    
+    private func bbox() -> String {
+        if let latitude = Double(latitudeTextField.text!), let longitude = Double(longitudeTextField.text!) {
+            let minLongitude = max(longitude - Constants.Flickr.SearchBBoxHalfWidth, Constants.Flickr.SearchLonRange.0)
+            let minLatitude = max(latitude - Constants.Flickr.SearchBBoxHalfHeight, Constants.Flickr.SearchLatRange.0)
+            let maxLongitude = min(longitude + Constants.Flickr.SearchBBoxHalfWidth, Constants.Flickr.SearchLonRange.1)
+            let maxLatitude = min(latitude + Constants.Flickr.SearchBBoxHalfHeight, Constants.Flickr.SearchLatRange.1)
+            return "\(minLongitude), \(minLatitude), \(maxLongitude), \(maxLatitude)"
+        } else {
+            return "0,0,0,0"
         }
     }
     
