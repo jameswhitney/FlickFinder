@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19507B66207130C4007DE08B /* MyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19507B65207130C4007DE08B /* MyConstants.swift */; };
+		19C06DB12073EA0D00D6643A /* MyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C06DB02073EA0D00D6643A /* MyConstants.swift */; };
 		A9A3A2081BEBB443009BE8E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A2071BEBB443009BE8E1 /* AppDelegate.swift */; };
 		A9A3A20A1BEBB443009BE8E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A2091BEBB443009BE8E1 /* ViewController.swift */; };
 		A9A3A20D1BEBB443009BE8E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9A3A20B1BEBB443009BE8E1 /* Main.storyboard */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19507B65207130C4007DE08B /* MyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConstants.swift; sourceTree = "<group>"; };
+		19C06DB02073EA0D00D6643A /* MyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConstants.swift; sourceTree = "<group>"; };
 		A9A3A2041BEBB443009BE8E1 /* FlickFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A3A2071BEBB443009BE8E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9A3A2091BEBB443009BE8E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				A9A3A2071BEBB443009BE8E1 /* AppDelegate.swift */,
-				19507B65207130C4007DE08B /* MyConstants.swift */,
 				A9A3A2091BEBB443009BE8E1 /* ViewController.swift */,
+				19C06DB02073EA0D00D6643A /* MyConstants.swift */,
 				A9A3A2231BEBD15B009BE8E1 /* Constants.swift */,
 				A9A3A2191BEBB46B009BE8E1 /* GCDBlackBox.swift */,
 				A9A3A21B1BEBB478009BE8E1 /* Assets */,
@@ -162,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9A3A20A1BEBB443009BE8E1 /* ViewController.swift in Sources */,
-				19507B66207130C4007DE08B /* MyConstants.swift in Sources */,
+				19C06DB12073EA0D00D6643A /* MyConstants.swift in Sources */,
 				A9A3A21A1BEBB46B009BE8E1 /* GCDBlackBox.swift in Sources */,
 				A9A3A2081BEBB443009BE8E1 /* AppDelegate.swift in Sources */,
 				A9A3A2241BEBD15B009BE8E1 /* Constants.swift in Sources */,
